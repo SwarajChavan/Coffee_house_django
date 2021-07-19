@@ -1,0 +1,15 @@
+body{
+background: black;
+}
+
+.borderless{
+margin: auto;
+max-width: 95%;
+}
+
+.borderless thead tr th, .borderless tbody tr td{
+font-family: 'Noto Serif', serif;
+color: white;
+font-size: 25px;
+border: none;
+}

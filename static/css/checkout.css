@@ -1,0 +1,7 @@
+body{
+background: black;
+}
+
+.table thead tr td{
+padding: 2px 2px 2px 2px;
+}

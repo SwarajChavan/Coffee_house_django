@@ -1,0 +1,250 @@
+.nav-link{
+max-height: auto;
+width:auto;
+//position:relative;
+//left:50px;
+//border: solid 10px red;
+//margin: 0px 0px 0px 0px;
+//padding-left:0px;
+padding-bottom:0px;
+padding-right: 10px;
+//border: solid 5px black ;
+}
+
+.badge {
+  position: relative;
+  top: -10px;
+  right: 5px;
+  //margin-top: 0px;
+  //margin-bottom: 0px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 50%;
+  //border: solid 2px #212529;
+  //color: #212529;
+  color: white;
+  font-size:13px;
+  //font-family: 'Anton', sans-serif;
+  }
+
+  .container-fluid .row{
+  //background-color: black;
+  max-height:auto;
+  }
+
+#cartexp{
+position: fixed;
+left:75%;
+margin-top:10px;
+background-color: white;
+height: 84%;
+text-align:center;
+border:solid 2px black;
+}
+
+.menu-top {
+background-color: black;
+color: white;
+width: 100%;
+text-align: center;
+font-family: 'Fredericka the Great', cursive;
+font-size: 50px;
+padding-top: 25px;
+padding-bottom: 10px;
+}
+
+.menu-top h2{
+background-color: black;
+font-family: 'Fredericka the Great', cursive;
+font-size: 50px;
+}
+
+#menucard{
+background-color: black;
+}
+
+#menu{
+width: 100%;
+background-color: black;
+border: solid white 15px;
+border-style: double;
+}
+
+table{
+max-width:auto;
+min-width: 45%;
+//border: white solid 5px;
+//border-style: double;
+color: white;
+}
+
+table tr{
+// border: green solid 1px;
+min-width: 100%;
+font-size: 30px;
+min-width: 50%;
+padding-left: 40px;
+}
+
+#itype{
+text-align: center;
+font-size: 40px;
+font-family: 'Fredericka the Great', cursive;
+padding-bottom: 20px;
+padding-top: 20px;
+
+}
+
+#titlei{
+text-align: center;
+padding-bottom:10px;
+font-size: 30px;
+font-family: 'Fredericka the Great', cursive;
+}
+
+#titlep{
+padding-left: 50px;
+//padding-right: 30px;
+font-family: 'Fredericka the Great', cursive;
+}
+
+#quant{
+padding-left: 50px;
+}
+
+#iname{
+padding-left: 50px;
+font-family: 'Fredericka the Great', cursive;
+}
+
+#iprice{
+padding-left: 70px;
+padding-right: 30px;
+font-family: 'Fredericka the Great', cursive;
+}
+
+.order{
+background-color: black;
+display: flex;
+justify-content: center;
+padding: 25px 0px 25px 0px;
+}
+
+.order #order{
+max-width: auto;
+color: white;
+font-size: 30px;
+font-family: 'Fredericka the Great', cursive;
+border: white solid 2px;
+background-color: black;
+}
+
+.order #order:hover {
+background-color: #2e8545;
+border: white solid 2px;
+font-size: 30px;
+font-family: 'Fredericka the Great', cursive;
+color: white;
+}
+
+.order #order:onclick {
+background-color: #2e8545;
+border: white solid 2px;
+font-size: 30px;
+font-family: 'Fredericka the Great', cursive;
+color: white;
+}
+
+#quant_n{
+width: 60px;
+height: 30px;
+justify-content: center;
+font-family: 'Fredericka the Great', cursive;
+font-size: 30px;
+color: black;
+}
+
+.modal-content{
+background-color: black;
+border: solid 2px white;
+}
+
+#exampleModalLabel{
+font-family: 'Fredericka the Great', cursive;
+font-size: 30px;
+color:white;
+}
+
+.modal-header button{
+background-color: red;
+width:30px;
+height:30px;
+border-radius:20%;
+color: white;
+}
+
+.modal-body{
+justify-content: center;
+border:  solid 2px white;
+}
+
+#ordered_list{
+width: 460px;
+height: 200px;
+padding: 10px 10px 10px 10px;
+font-family: 'Fredericka the Great', cursive;
+font-size: 20px;
+border: solid 2px white;
+background-color: black;
+color: white;
+}
+
+.total{
+background-color: black;
+display: flex;
+justify-content: flex-end;
+padding: 20px 0px 20px 0px;
+}
+
+.Total{
+width: auto;
+color: white;
+font-size: 20px;
+font-family: 'Fredericka the Great', cursive;
+background-color: black;
+}
+
+#total{
+width: auto;
+height: 20px;
+color: white;
+text-align: center;
+font-size: 20px;
+font-family: 'Fredericka the Great', cursive;
+border:0px;
+background-color: black;
+}
+
+.fin_order{
+background-color: black;
+display: flex;
+justify-content: center;
+padding: 5px 0px 5px 0px;
+}
+
+#conf_order{
+max-width: auto;
+color: white;
+font-size: 20px;
+font-family: 'Fredericka the Great', cursive;
+border: white solid 2px;
+background-color: black;
+}
+
+#conf_order:hover{
+background-color: #2e8545;
+}
+
+#conf_order:onclick{
+background-color: #2e8545
+}
+

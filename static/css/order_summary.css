@@ -1,0 +1,65 @@
+body{
+background: black;
+}
+
+#container{
+background: black;
+padding: 30px 30px;
+width: 100%;
+}
+
+table{
+width: 100%;
+table-layout: fixed;
+}
+
+.tbl-header{
+background: black;
+}
+
+.tbl-content{
+background: black;
+max-height: 384px;
+overflow-y: scroll;
+}
+
+.tbl-content table{
+margin: 0px 0px 0px 0px;
+}
+
+table thead tr th{
+font-family: 'Noto Serif', serif;
+font-size: 25px;
+padding: 10px 10px 10px 10px;
+color: white;
+border-bottom:solid white 2px;
+//text-align: center;
+}
+
+table tbody tr td{
+font-family: 'Noto Serif', serif;
+font-size: 20px;
+padding: 10px 10px 10px 10px;
+color: white;
+//text-align: center;
+border-bottom:solid white 2px;
+}
+
+.tbl-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.tbl-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.tbl-content::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.tbl-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+

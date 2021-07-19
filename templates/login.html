@@ -1,0 +1,35 @@
+{% extends 'header.html' %}
+{% block link %}
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+<link href="{{baseCss}}/login.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+{% block content %}
+<style>
+    body{background: black;}
+</style>
+<div class="loginform">
+<h2 style="">Login</h2>
+{% if request.user.is_authenticated %}
+<h3>You are already logged-in. go back to <a href="{% url 'dashboard'%}">Home</a></h3>
+{% else %}
+<form method="POST" style="" >
+    {% csrf_token %}
+    <table class="table borderless">
+        {% for field in form %}
+        <tr>
+            <td style="color: white;">{{field.label}}</td><td>{{field}}{% if field.errors %}<span style="font-size: 15px; color: red">* {{field.errors|striptags}}</span>{% endif %}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2">
+            <button type="submit" value="Submit" class="btn btn-success" style="width: 100%">Login</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<h2 style="border-top: solid white 2px; border-bottom: none;">Need an account? <a href="{% url 'register' %}"> Register</a></h2>
+{% endif %}
+</div>
+{% endblock %}

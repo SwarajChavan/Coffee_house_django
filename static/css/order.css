@@ -1,0 +1,155 @@
+body{
+background: black;
+}
+
+#menu-title{
+width: 100%;
+background: black;
+width: 100%;
+color: white;
+text-align: center;
+font-family: 'Noto Serif', serif;
+padding: 10px 10px 10px 10px;
+text-decoration-line: underline;
+}
+
+#menu-boxes{
+justify-content: center;
+background: black;
+}
+@media screen and (max-width: 1920px) {
+#item-tables{
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #menu-boxes{
+    flex-direction: column;
+  }
+}
+
+#item-tables{
+background: black;
+height: auto;
+border: white solid 5px;
+border-style: double;
+}
+
+.table{
+width: 100%;
+padding-bottom: 0px;
+margin: 0px 0px 0px 0px;
+table-layout: fixed;
+}
+.tbl-header, .tbl-content{
+width: 100%;
+}
+table thead tr th, table tbody tr td{
+color: white;
+font-family: 'Noto Serif', serif;
+}
+
+.tbl-content{
+height: 331px;
+font-size: 25px;
+overflow-y: scroll;
+}
+
+.tbl-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.tbl-content::-webkit-scrollbar-track {
+  background: black;
+  border: solid white 2px;
+}
+
+/* Handle */
+.tbl-content::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+.tbl-content::-webkit-scrollbar-thumb:hover {
+  background: gray;
+  }
+
+.order{
+background-color: black;
+display: flex;
+justify-content: center;
+padding: 25px 0px 25px 0px;
+}
+
+  #order{
+  max-width: auto;
+  color: white;
+  font-size: 30px;
+  font-family: 'Fredericka the Great', cursive;
+  border: white solid 2px;
+  background-color: black;
+  }
+
+  #order:hover {
+  background-color: #2e8545;
+  border: white solid 2px;
+  font-size: 30px;
+  font-family: 'Fredericka the Great', cursive;
+  color: white;
+  }
+
+
+  .modal-content{
+  background: black;
+  border: solid white 5px;
+  }
+
+.modal-header{
+color: white;
+font-size: 30px;
+font-family: 'Noto Serif', serif;
+}
+
+.modal-body{
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+}
+
+#edit{
+padding: 5px 5px 5px 5px;
+color: white;
+font-size: 25px;
+font-family: 'Noto Serif', serif;
+}
+
+#check_order{
+width: 100%;
+max-height: 330px;
+}
+
+.m-tbl-content{
+height: 235px;
+overflow-y: scroll;
+}
+
+.m-tbl-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.m-tbl-content::-webkit-scrollbar-track {
+  background: black;
+  border: solid white 2px;
+}
+
+/* Handle */
+.m-tbl-content::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+.m-tbl-content::-webkit-scrollbar-thumb:hover {
+  background: gray;
+  }

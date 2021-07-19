@@ -1,0 +1,26 @@
+{% extends 'header.html' %}
+<style>
+</style>
+{% block link %}
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+<link href="{{baseCss}}/register.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div  align="center" style="justify-content: center; margin: auto; height: auto">
+    <form method="post" enctype="multipart/form-data" action="" style="text-align: left; font-family: 'Noto Serif', serif;; border: white solid 2px;">
+        {% csrf_token %}
+        <ul style="list-style-type:none;">
+            <li><h2 style=" color: white; font-family: 'Noto Serif', serif; padding-bottom: 20px;">Register</h2></li>
+        {% for field in form %}
+            <li style="padding-bottom:20px; color: white; background: black;">{{field.label}}: {{field}} <span style="color: yellow; font-size: 20px; ">{{field.errors}}</span></li>
+        {% endfor %}
+            <li><button type="submit" class="btn btn-success btn-lg btn-block" value="Submit" style="width: 400px;">Submit</button></li>
+            <br>
+            <li><h3 style="color: white; font-family: 'Noto Serif', serif; width: 100%;">Already have an account? <a href="{% url 'login' %}" style="color: white;">Login</a></h3>
+            </li>
+        </ul>
+    </form>
+</div>
+{% endblock %}

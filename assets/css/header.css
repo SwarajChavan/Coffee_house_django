@@ -1,0 +1,39 @@
+/*main{
+display: grid;
+}*/
+.page-header{
+max-width: 100%;
+width:auto;
+ }
+
+
+.navbar{
+border-bottom: #0f0802 solid 4px;
+background-color: #f9f1ef !important;
+min-width:100%;
+padding-bottom:0px;
+}
+
+.navbar-toggler{
+background-color: #613421;
+}
+
+.navbar-brand{
+padding-right: 100px
+}
+
+.nav-item {
+font-family: 'Patua One', cursive;
+font-size: 30px;
+padding-right: 120px;
+}
+
+.nav1{
+color: #0f0802;
+position: relative;
+width: auto;
+}
+
+.nav1:hover{
+color: green;
+}

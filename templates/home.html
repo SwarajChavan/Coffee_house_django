@@ -1,0 +1,133 @@
+<!--Extend the header from header.html-->
+{% extends 'header.html' %}
+
+<!--Extend the title for html-->
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+<!--Extend thel ink for html-->
+{% block link %}
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{baseCss}}/home.css">
+{% endblock %}
+
+{% block content %}
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{{baseImg}}/Cofee1.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Fresh Coffee Beans</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{baseImg}}/Coffee2.jpg" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Hand-picked for Refreshing Taste</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{baseImg}}/Coffee3.jpg" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Served in a Mug with Love</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" type="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#carouselExampleIndicators" type="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+<!--<div id="container">-->
+<div id="menu-title">
+    <h1>Menu</h1>
+</div>
+<div class="d-flex flex-wrap" id="menu-boxes">
+    <div id="item-tables" style="height: auto">
+        <div class="tbl-header">
+
+            <table class="table">
+                <thead>
+                <tr style="font-size: 30px;">
+                    <th colspan="2" scope="col" style="text-align: center; text-decoration-line: underline;">Beverages</th>
+                </tr>
+                <tr style="font-size: 27px;">
+                    <th scope="col" style="padding-left: 10%;">Items</th>
+                    <th scope="col" style="padding-right: 15%; text-align: right;" >Price ( ₹ )</th>
+                </tr>
+                </thead>
+            </table>
+
+        </div>
+        <div class="tbl-content">
+
+            <table class="table">
+                <tbody>
+                {% for item in items %}
+                {% if item.beverage == True and item.discontinued == False %}
+                <tr>
+                    <td style="padding-left: 10%;">{{item.name}}</td>
+                    <td style="padding-right: 15%; text-align: right;">{{item.price}} /- ₹</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div id="item-tables" style="height: auto">
+        <div class="tbl-header">
+
+            <table class="table">
+                <thead>
+                <tr style="font-size: 30px;">
+                    <th colspan="2" scope="col" style="text-align: center;  text-decoration-line: underline;">Snacks</th>
+                </tr>
+                <tr style="font-size: 27px;">
+                    <th scope="col" style="padding-left: 10%;">Items</th>
+                    <th scope="col" style="padding-right: 15%; text-align: right;">Price ( ₹ )</th>
+                </tr>
+                </thead>
+            </table>
+
+        </div>
+        <div class="tbl-content">
+
+            <table class="table">
+                <tbody>
+                {% for item in items %}
+                {% if item.snack == True and item.discontinued == False %}
+                <tr>
+                    <td style="padding-left: 10%;">{{item.name}}</td>
+                    <td style="padding-right: 15%; text-align: right;">{{item.price}}/-  ₹</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+<div class="order">
+    <a id ="order" type="button" class="btn btn-lg"  href="order">ORDER</a>
+    </div>
+<!--<div class="d-flex justify-content-center flex-wrap" id="fnt">-->
+
+<!--</div>-->
+<div class="d-flex justify-content-center flex-wrap" id="about">
+
+</div>
+    {% endblock %}

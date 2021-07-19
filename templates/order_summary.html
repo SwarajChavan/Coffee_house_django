@@ -1,0 +1,77 @@
+{% extends 'header.html' %}
+{% block title %}
+<title>Order Summary</title>
+{% endblock %}
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{baseCss}}/order_summary.css">
+    <!--<script src="{{baseJs}}/order_.js"></script>-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container-fluid" id="container">
+    <div class="tbl-header" style="border: solid white 0px; ">
+        <table class="table table-responsive" style="margin-bottom: 0px;" cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th scope="col">Items</th>
+                    <th scope="col" style="text-align: center;">Quantity</th>
+                    <th scope="col" style="text-align: left;">Price / unit</th>
+                </tr>
+            </thead>
+        </table >
+    </div>
+    <div class="tbl-content">
+    <table class="table table-responsive"  cellpadding="1" cellspacing="1" border="0">
+        <tbody>
+            {% for oi in order_item %}
+            <tr>
+                <td>{{oi.item.name}}</td>
+                <td align="center">
+                    <a id="reduce_quantity" href="{% url 'reduce-quantity' oi.item.pk %}" type="button"><img src="{{baseImg}}/minus.png"  width="20px" height="20px" style="border-radius: 20%"></a>
+                    {{oi.quantity}}
+                    <a id ="increase_quantity" type="button" data-bs-toggle="tooltip" data-bs-placement="top"title="Increase quantity"  href="{{ oi.item.get_add_to_cart_url}}">
+                        <img src="{{baseImg}}/add.png"  width="20px" height="20px" style="border-radius: 20%">
+                    </a>
+                    <a id ="remove_cart" type="button" data-bs-toggle="tooltip" data-bs-placement="top"title="Remove from Cart" href="{{oi.item.get_remove_cart_url}}">
+                        <img   src="{{baseImg}}/trash.png" width="20px" height="20px" style="border-radius: 20%">
+                    </a>
+                </td>
+                <td align="left" style="padding-left: 50px">{{oi.item.price}} ₹</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div class="tbl-footer">
+        <table class="table table-responsive">
+            <tr>
+                <td align="left" colspan="3">* You can only pick maximum 10 of each item.
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <span style=" text-align: center;">
+                        <a  type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Continue Shopping" style="width: 90%;  padding: 0px 5px 0px 5px; vertical-align: middle; text-decoration: none" href="{% url 'order' %}">
+                            <h3 style="color: white; font-size: 20px; font-family: 'Noto Serif', serif; vertical-align: middle;  background: #056e0e; border: solid white 2px; padding: 0px 5px 0px 5px;">Continue Shopping</h3>
+                        </a>
+                    </span>
+                </td>
+                <td align="center">
+                    <span style="border: solid white 2px; padding: 0px 5px 0px 5px; background: #b08612; text-align: center;">
+                        <a type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Checkout"
+                           style="width: 90%;  padding: 0px 5px 0px 5px; vertical-align: middle; text-decoration: none;"
+                           href="{% url 'checkout' %}">
+                            <h3 style="color: white; font-size: 20px; font-family: 'Noto Serif', serif;  vertical-align: middle;">Checkout</h3>
+                        </a>
+                    </span>
+                </td>
+                <td>Total: {{order.get_total_price}} /- ₹</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

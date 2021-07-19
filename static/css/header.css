@@ -1,0 +1,105 @@
+/*main{
+display: grid;
+}*/
+.page-header{
+max-width: 100%;
+width:auto;
+
+ }
+
+
+.navbar{
+border-bottom: #0f0802 solid 4px;
+background-color: #f9f1ef !important;
+min-width:100%;
+padding-bottom:0px;
+padding-top:0px;
+}
+
+.navbar-toggler{
+background-color: #613421;
+}
+
+.container-fluid button:onclick{
+border: black solid  2px;
+}
+
+
+.navbar-brand{
+padding-right: 80px;
+font-family: 'Patua One', cursive;
+font-size: 30px;
+}
+
+.nav-item {
+font-family: 'Patua One', cursive;
+font-size: 30px;
+padding-right: 40px;
+}
+
+#about{
+padding-right: 320px;
+background-color: #f9f1ef !important;
+}
+
+
+#cart{
+padding-right: 20px;
+color: #f9f1ef !important;
+}
+
+#navhi{
+padding-right: 5px;
+}
+
+.nav1{
+color: #0f0802;
+position: relative;
+width: auto;
+text-decoration:none;
+
+}
+
+.nav1:hover{
+color: green;
+}
+
+.notification{
+color:  #f9f1ef !important;
+}
+.notification .badge {
+  position: relative;
+  top: -15px;
+  right: -15px;
+  padding: 5px 5px;
+  border-radius: 50%;
+  margin: 0px 0px;
+  background: red;
+  color: white;
+}
+#ordered_food{
+padding-left:0px;}
+
+#navbarDropdown{
+color: #0f0802;
+position: relative;
+width: auto;
+padding-top:0px;
+padding-bottom:0px;
+
+}
+#navbarDropdown:hover{
+color: green;
+}
+.dropdown-item{
+font-family: 'Patua One', cursive;
+font-size: 20px;
+//padding-right: 120px;
+}
+
+.dropdown-menu{
+background-color: #f9f1ef !important;
+padding-bottom:0px;
+padding-top:0px;
+
+}

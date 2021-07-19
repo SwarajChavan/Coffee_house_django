@@ -1,0 +1,54 @@
+{% extends 'header.html' %}
+{% block title %}
+  <title>Orders</title>
+{% endblock %}
+
+{% block link %}
+  <link href="{{baseCss}}/previous-orders.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  {% for payment in object_list %}
+    <table class="table borderless">
+      <thead>
+        <tr style="border: solid white 2px;">
+          <th>Order id: {{payment.order.id}}</th>
+          <th>Date: {{payment.order.ordered_date}}</th>
+          <th>Total Amount: {{payment.amount}} /- ₹</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3">
+          <table class="table borderless">
+            <thead>
+              <tr>
+                <th>Items</th>
+                <th style="text-align: center">Type</th>
+                <th style="text-align: center">Quantity</th>
+                <th style="text-align: center">Price/unit ( ₹ )</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in payment.order.items.all %}
+              <tr>
+                <td>{{item.item.name}}</td>
+                {% if item.item.beverage == True and discontinued != True %}
+                  <td style="text-align: center">Beverage</td>
+                {% else %}
+                  <td style="text-align: center">Snack</td>
+                {% endif %}
+                <td style="text-align: center">{{item.quantity}}</td>
+                <td style="text-align: center">{{item.item.price}} /- ₹</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </td>
+        </tr>
+      </tbody>
+
+    </table>
+  {% endfor %}
+{% endblock %}

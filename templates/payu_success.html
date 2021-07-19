@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment-Success</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+    <link href="{{baseImg}}/PAYU_LOGO.png" rel="icon" type="image/icon">
+</head>
+<body style="background: black">
+<div style="display:none">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{% csrf_token %}">
+</div>
+<div style="color: white; border: solid 2px white; width: 80%; justify-content: center; margin: auto; padding: 5%; font-family: 'Noto Serif', serif;" align="left">
+    <h1 style="text-align: center">Thank You</h1><br>
+    <h4>Your order status is <span style="color:green">{{ status.upper }}</span> .</h4><br>
+    <h4>Your Transaction ID for this transaction is: <span style="color:green">{{ txnid }}</span></h4><br>
+    <h4>We have received a payment of Rs <span style="color:green">{{ amount}}</span> .</h4><br>
+    <h4>Back to <a class="btn btn-success" href="{% url 'home' %}">Home</a></h4>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
