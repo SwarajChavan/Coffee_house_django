@@ -46,14 +46,14 @@
                 {% if item.beverage == True and item.discontinued == False %}
                 <tr>
                     <td>{{item.name}}</td>
-                    <td style="text-align: right;">{{item.price}} /- ₹</td>
+                    <td style="text-align: right;">{{item.price}} /-</td>
                     <td style="text-align: center;">
-                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{ item.get_add_to_cart_url}}" title="Add to cart" type="button">
-                            <img height="25px" src="{{baseImg}}/shopping-cart.png" width="25px">
+                        <a class="btn btn-success" data-bs-placement="top" data-bs-toggle="tooltip" href="{{ item.get_add_to_cart_url}}" title="Add to cart" type="button" style="background: #3C8D34;">
+                            Add to cart <img height="25px" src="{{baseImg}}/shopping-cart.png" width="25px">
                         </a>
-                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{item.get_remove_cart_url}}" title="Remove from cart" type="button">
-                            <img height="25px" src="{{baseImg}}/trash.png" width="25px">
-                        </a>
+<!--                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{item.get_remove_cart_url}}" title="Remove from cart" type="button">-->
+<!--                            <img height="25px" src="{{baseImg}}/trash.png" width="25px">-->
+<!--                        </a>-->
                     </td>
                 </tr>
                 {% endif %}
@@ -88,14 +88,14 @@
                 {% if item.snack == True and item.discontinued == False %}
                 <tr>
                     <td>{{item.name}}</td>
-                    <td style="text-align: right;">{{item.price}} /- ₹</td>
+                    <td style="text-align: right;">{{item.price}} /-</td>
                     <td style="text-align: center;">
-                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{ item.get_add_to_cart_url}}" title="Add to cart" type="button">
-                            <img height="25px" src="{{baseImg}}/shopping-cart.png" width="25px">
+                        <a class="btn btn-success" data-bs-placement="top" data-bs-toggle="tooltip" href="{{ item.get_add_to_cart_url}}" title="Add to cart" type="button" style="background: #3C8D34;">
+                            Add to cart <img height="25px" src="{{baseImg}}/shopping-cart.png" width="25px">
                         </a>
-                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{item.get_remove_cart_url}}" title="Remove from cart" type="button">
-                            <img height="25px" src="{{baseImg}}/trash.png" width="25px">
-                        </a>
+<!--                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{item.get_remove_cart_url}}" title="Remove from cart" type="button">-->
+<!--                            <img height="25px" src="{{baseImg}}/trash.png" width="25px">-->
+<!--                        </a>-->
                     </td>
                 </tr>
                 {% endif %}
@@ -109,7 +109,7 @@
 </div>
 <div class="order">
     <!-- Button trigger modal -->
-    <button class="btn" data-bs-target="#staticBackdrop" data-bs-toggle="modal" id="order" type="button">ORDER</button>
+    <button class="btn btn-success" data-bs-target="#staticBackdrop" data-bs-toggle="modal" id="order" type="button">ORDER</button>
     <!-- Modal -->
     <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="staticBackdrop" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -121,11 +121,11 @@
                     </a>
                 </div>
                 <div class="modal-body">
-                        <span class="float-end">
-                            <a href="{% url 'order-summary' %}" id="edit" type="button"> Edit:
-                                <img height="25px" src="{{baseImg}}/edit.png" width="25px">
-                            </a>
-                        </span>
+                    <span class="float-end">
+                        <a href="{% url 'order-summary' %}" id="edit" type="button"> Edit:
+                            <img height="25px" src="{{baseImg}}/edit.png" width="25px">
+                        </a>
+                    </span>
                     <div id="check_order">
                         <div class="m-tbl-header">
                             <table class="table">

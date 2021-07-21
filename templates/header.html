@@ -15,6 +15,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{baseCss}}/header.css">
         <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
         <div class="wrapper">
             {% block link %}
             {% endblock %}
@@ -38,17 +41,16 @@
                         <li class="nav-item">
                             <a class="nav1" href="{% url 'order' %}">Order</a>
                         </li>
-                        <li  class="nav-item">
-                            <a class="nav1" href="about">About us</a>
-                        </li>
+<!--                        <li  class="nav-item">-->
+<!--                            <a class="nav1" href="about">About us</a>-->
+<!--                        </li>-->
                     </ul>
                     <ul class="navbar-nav ms-auto flex-nowrap">
                         {% if request.user.is_authenticated %}
                         <li class="nav-item" id="cart">
                                 <a href="{% url 'order-summary' %}" class="notification" data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                    <span class="badge"
-                                          style="font-size:10px ; width: 30px; height: 30px;">
-                                        <h6 style="margin: 0px 0px; font-size:15px ; text-decoration: none;"><b>{{len_oi}}</b></h6>
+                                    <span class="badge">
+                                        <h6><b>{{len_oi}}</b></h6>
                                     </span>
                                     <img id="ordered_food" src="{{baseImg}}/ordered_food.png" width="35px" height="35px">
                                 </a>

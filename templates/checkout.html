@@ -13,48 +13,82 @@
 {% endblock %}j
 
 {% block content %}
-<div class="d-flex flex wrap">
-    <div style="min-width: 68%; padding: 0px 0px 0px 0px; margin: 10px 10px 10px 10px;">
-        <h3 style="color: white; font-family: 'Noto Serif', serif">Shipping address</h3>
+<div class="d-flex flex-wrap">
+    <div class="checkout-form">
+        <div class="d-flex" style="width: 100%; margin-bottom: 20px; margin-top: 20px;">
+            <h3>Shipping address</h3>
+            <span class="ms-auto" style="max-width: 30%">
+                <button class="btn btn-success" data-bs-target="#staticBackdrop" data-bs-toggle="modal" id="order" type="button">View order</button>
+            </span>
+
+        </div>
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="staticBackdrop" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span>Your order</span>
+                        <a aria-label="Close" class="btn-close " data-bs-dismiss="modal" onclick="reset()" style="padding-right:20px; padding-bottom:20px;" type="button"data-bs-toggle="tooltip" data-bs-placement="top" title="Close">
+                            <img src="{{baseImg}}/close.png" width="30" height="30">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex">
+                            <span class="ms-auto">
+                                <a id="edit" href="{% url 'order-summary' %}"> Edit: <img src="{{baseImg}}/edit.png" width="25" height="25"/></a>
+                            </span>
+                        </div>
+                        <div id="check_order">
+                            <table class="table borderless">
+                                <thead>
+                                    <tr>
+                                        <th id="item-head" style="">Items</th>
+                                        <th id="quantity-head">Quantity</th>
+                                        <th id="price-head">Price/ Unit</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                {% if order_item %}
+                                {% for oitem in order_item%}
+                                <tr>
+                                    <td id="item-name">{{oitem.item.name}}</td>
+                                    <td id="item-quantity">{{oitem.quantity}}</td>
+                                    <td id="item-price">{{oitem.item.price}} /- ₹</td>
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <tr><td colspan="3">Nothing to show. Order something.</td></tr>
+                                {% endif %}
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" style="border-top: solid white 2px;">
+                        <span class="ms-auto">Total: {{order.get_total_price}} /- ₹</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <form method="post">
 <!--        <form method="post">-->
 
             {% csrf_token %}
             <table>
                 {% for field in form %}
-                <tr style="padding-bottom: 5px;">
-                    <td style="padding-right: 10px;"><label style="color: white; font-family: 'Noto Serif', serif;">{{field.label}} :</label></td>
-                    <td>{{field}}</td>
+                <tr >
+                    <td><label style="">{{field.label}} :</label></td>
+                    <td>{{field}}<span>{{field.errors|striptags}}</span></td>
                 </tr>
                 {% endfor %}
                 <tr>
-                    <td colspan="2"><button class="btn btn-primary" type="submit" style="font-family: 'Noto Serif', serif;">Submit</button></td>
-                </tr>
             </table>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
-    </div>
-    <div style="min-width: 28%; padding: 0px 0px 0px 0px; margin: 10px 10px 10px 10px; border: white solid 2px; border-radius: 5%;">
-        <h3 style="text-align: center; color: white; font-family: 'Noto Serif', serif; border-bottom: white solid 2px; margin: 0px 0px 0px 0px;">Your Order</h3>
-        <table style="margin: 0px 0px 0px 0px; padding: 5px 5px 5px 5px; border: 0px; font-family: 'Noto Serif', serif; width: 100%; color: white; border-bottom: solid white 2px;">
-            <thead style="border-bottom: solid white 1px;">
-                <tr>
-                    <td style="padding-left: 5px;">Items</td>
-                    <td align="center">Quantity</td>
-                    <td align="right" style="padding-right: 5px;">₹/unit</td>
-                </tr>
-            </thead>
-            <tbody>
-            {% for oitem in order.items.all %}
-            <tr>
-                <td align="left" style="padding-left: 5px;">{{oitem.item.name}}</td>
-                <td align="center">{{oitem.quantity}}</td>
-                <td align="right" style="padding-right: 5px;">{{oitem.item.price}} ₹</td>
-            </tr>
-            {% endfor %}
-        </table>
-        <div class="d-flex">
-            <h6 class="ms-auto" style="padding: 5px 5px 5px 5px; color: white; font-family: 'Noto Serif', serif; vertical-align: center;">Total: {{order.get_total_price}} /- ₹</h6>
-        </div>
     </div>
 </div>
 {% endblock %}

@@ -123,16 +123,16 @@ def checkout(request):
             if form.is_valid():
                 street_name = form.cleaned_data['street_name']
                 apartment_address = form.cleaned_data['apartment_address']
-                city = 'Mumbai'
-                pincode = int(form.cleaned_data['pincode'])
-                checkout_address = str({"street": street_name, "apt_add": apartment_address, "city": city, "pin": pincode})
+                city = form.cleaned_data['city']
+                pincode = form.cleaned_data['pincode']
+                checkout_address = str(apartment_address+", "+street_name+ ", "+city+"-"+str(pincode))
                 update_order = Orders.objects.get(ordered_by=request.user, ordered=False)
                 update_order.checkout_address = checkout_address
                 update_order.save()
                 return redirect(reverse('payment-gateway'))
     else:
         form = CheckoutForm()
-    return render(request, 'checkout.html', {'form': form,'len_oi':len_oi, 'order':order})
+    return render(request, 'checkout.html', {'form': form,'len_oi':len_oi, 'order':order, 'order_item': order_item})
 
 PAYMENT_URL_TEST = 'https://test.payu.in/_payment'
 PAYMENT_URL_LIVE = 'https://secure.payu.in/_payment'

@@ -53,17 +53,17 @@
     <h1>Menu</h1>
 </div>
 <div class="d-flex flex-wrap" id="menu-boxes">
-    <div id="item-tables" style="height: auto">
+    <div id="item-tables">
         <div class="tbl-header">
 
             <table class="table">
                 <thead>
-                <tr style="font-size: 30px;">
-                    <th colspan="2" scope="col" style="text-align: center; text-decoration-line: underline;">Beverages</th>
+                <tr>
+                    <th colspan="2" scope="col" id="itype">Beverages</th>
                 </tr>
-                <tr style="font-size: 27px;">
-                    <th scope="col" style="padding-left: 10%;">Items</th>
-                    <th scope="col" style="padding-right: 15%; text-align: right;" >Price ( ₹ )</th>
+                <tr>
+                    <th scope="col" id="items-head-name">Items</th>
+                    <th scope="col" id="items-head-price" >Price ( ₹ )</th>
                 </tr>
                 </thead>
             </table>
@@ -76,8 +76,8 @@
                 {% for item in items %}
                 {% if item.beverage == True and item.discontinued == False %}
                 <tr>
-                    <td style="padding-left: 10%;">{{item.name}}</td>
-                    <td style="padding-right: 15%; text-align: right;">{{item.price}} /- ₹</td>
+                    <td id="item-name">{{item.name}}</td>
+                    <td id="item-price">{{item.price}} /- ₹</td>
                 </tr>
                 {% endif %}
                 {% endfor %}
@@ -86,17 +86,17 @@
 
         </div>
     </div>
-    <div id="item-tables" style="height: auto">
+    <div id="item-tables">
         <div class="tbl-header">
 
             <table class="table">
                 <thead>
-                <tr style="font-size: 30px;">
-                    <th colspan="2" scope="col" style="text-align: center;  text-decoration-line: underline;">Snacks</th>
+                <tr>
+                    <th colspan="2" scope="col" id="itype">Snacks</th>
                 </tr>
-                <tr style="font-size: 27px;">
-                    <th scope="col" style="padding-left: 10%;">Items</th>
-                    <th scope="col" style="padding-right: 15%; text-align: right;">Price ( ₹ )</th>
+                <tr>
+                    <th scope="col" id="items-head-name">Items</th>
+                    <th scope="col" id="items-head-price">Price ( ₹ )</th>
                 </tr>
                 </thead>
             </table>
@@ -109,8 +109,8 @@
                 {% for item in items %}
                 {% if item.snack == True and item.discontinued == False %}
                 <tr>
-                    <td style="padding-left: 10%;">{{item.name}}</td>
-                    <td style="padding-right: 15%; text-align: right;">{{item.price}}/-  ₹</td>
+                    <td id="item-name">{{item.name}}</td>
+                    <td id="item-price">{{item.price}} /- ₹</td>
                 </tr>
                 {% endif %}
                 {% endfor %}
@@ -119,15 +119,13 @@
 
         </div>
     </div>
+    </div>
 
 </div>
 <div class="order">
     <a id ="order" type="button" class="btn btn-lg"  href="order">ORDER</a>
     </div>
-<!--<div class="d-flex justify-content-center flex-wrap" id="fnt">-->
+<!--<div class="d-flex justify-content-center flex-wrap" id="about">-->
 
 <!--</div>-->
-<div class="d-flex justify-content-center flex-wrap" id="about">
-
-</div>
     {% endblock %}

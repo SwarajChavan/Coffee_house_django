@@ -1,0 +1,27 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body{
+background: black;
+}
+
+.form-control{
+background: black;
+color: white;
+font-size: 25px;
+}
+
+form ul li input{
+background: black;
+color: white;
+font-size: 25px;
+}

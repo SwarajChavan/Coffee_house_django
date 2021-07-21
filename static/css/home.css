@@ -31,17 +31,6 @@ text-decoration-line: underline;
 justify-content: center;
 background: black;
 }
-@media screen and (max-width: 1920px) {
-#item-tables{
-    flex: 50%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  #menu-boxes{
-    flex-direction: column;
-  }
-}
 
 #item-tables{
 background: black;
@@ -59,10 +48,27 @@ table-layout: fixed;
 .tbl-header, .tbl-content{
 width: 100%;
 }
+
 table thead tr th, table tbody tr td{
 color: white;
 font-family: 'Noto Serif', serif;
 }
+
+#itype{
+text-align: center;
+text-decoration-line: underline;
+font-size: 30px;
+}
+#items-head-name{
+font-size: 27px;
+padding-left: 10%;
+}
+#items-head-price{
+font-size: 27px;
+padding-right: 15%;
+text-align: right;
+}
+
 
 .tbl-content{
 height: 331px;
@@ -88,6 +94,14 @@ overflow-y: scroll;
 /* Handle on hover */
 .tbl-content::-webkit-scrollbar-thumb:hover {
   background: gray;
+  }
+
+  #item-name{
+  padding-left: 10%;
+  }
+  #item-price{
+  padding-right: 15%;
+  text-align: right;
   }
 
 .order{
@@ -122,14 +136,39 @@ font-family: 'Fredericka the Great', cursive;
 color: white;
 }
 
-#fnt{
-max-width: 100%;
-height: 690px;
-background-color:gray;
+#about{
+height: 800px;
 }
 
-#about{
-max-width: 100%;
-height: 690px;
-background-color: white;
+@media screen and (max-width: 1920px) {
+#item-tables{
+    flex: 50%;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+     #menu-boxes{
+        flex-direction: column;
+      }
+      #menu-title h1{
+      font-size: 45px;
+      }
+
+    #itype{
+    font-size: 42px;
+    }
+    #items-head-name {
+    font-size: 40px;
+    }
+    #items-head-price{
+    font-size: 42px;
+    }
+    #item-name{
+    font-size: 40px;
+    }
+    #item-price{
+    font-size: 40px;
+    }
+
 }

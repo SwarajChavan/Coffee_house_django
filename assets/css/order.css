@@ -1,126 +1,80 @@
-.nav-link{
-max-height: auto;
-width:auto;
-//position:relative;
-//left:50px;
-//border: solid 10px red;
-//margin: 0px 0px 0px 0px;
-//padding-left:0px;
-padding-bottom:0px;
-padding-right: 10px;
-//border: solid 5px black ;
+body{
+background: black;
 }
 
-.badge {
-  position: relative;
-  top: -10px;
-  right: 5px;
-  //margin-top: 0px;
-  //margin-bottom: 0px;
-  padding: 5px 5px 5px 5px;
-  border-radius: 50%;
-  //border: solid 2px #212529;
-  //color: #212529;
-  color: white;
-  font-size:13px;
-  //font-family: 'Anton', sans-serif;
-  }
-
-  .container-fluid .row{
-  //background-color: black;
-  max-height:auto;
-  }
-
-#cartexp{
-position: fixed;
-left:75%;
-margin-top:10px;
-background-color: white;
-height: 84%;
-text-align:center;
-border:solid 2px black;
-}
-
-.menu-top {
-background-color: black;
+#menu-title{
+width: 100%;
+background: black;
+width: 100%;
 color: white;
-width: 100%;
 text-align: center;
-font-family: 'Fredericka the Great', cursive;
-font-size: 50px;
-padding-top: 25px;
-padding-bottom: 10px;
+font-family: 'Noto Serif', serif;
+padding: 10px 10px 10px 10px;
+text-decoration-line: underline;
 }
 
-.menu-top h2{
-background-color: black;
-font-family: 'Fredericka the Great', cursive;
-font-size: 50px;
+#menu-boxes{
+justify-content: center;
+background: black;
+}
+@media screen and (max-width: 1920px) {
+#item-tables{
+    flex: 50%;
+  }
 }
 
-#menucard{
-background-color: black;
+@media screen and (max-width: 1000px) {
+  #menu-boxes{
+    flex-direction: column;
+  }
 }
 
-#menu{
-width: 100%;
-background-color: black;
-border: solid white 15px;
+#item-tables{
+background: black;
+height: auto;
+border: white solid 5px;
 border-style: double;
 }
 
-table{
-max-width:auto;
-min-width: 45%;
-//border: white solid 5px;
-//border-style: double;
+.table{
+width: 100%;
+padding-bottom: 0px;
+margin: 0px 0px 0px 0px;
+table-layout: fixed;
+}
+.tbl-header, .tbl-content{
+width: 100%;
+}
+table thead tr th, table tbody tr td{
 color: white;
+font-family: 'Noto Serif', serif;
 }
 
-table tr{
-// border: green solid 1px;
-min-width: 100%;
-font-size: 30px;
-min-width: 50%;
-padding-left: 40px;
+.tbl-content{
+height: 331px;
+font-size: 25px;
+overflow-y: scroll;
 }
 
-#itype{
-text-align: center;
-font-size: 40px;
-font-family: 'Fredericka the Great', cursive;
-padding-bottom: 20px;
-padding-top: 20px;
-
+.tbl-content::-webkit-scrollbar {
+  width: 8px;
 }
 
-#titlei{
-text-align: center;
-padding-bottom:10px;
-font-size: 30px;
-font-family: 'Fredericka the Great', cursive;
+/* Track */
+.tbl-content::-webkit-scrollbar-track {
+  background: black;
+  border: solid white 2px;
 }
 
-#titlep{
-padding-left: 50px;
-//padding-right: 30px;
-font-family: 'Fredericka the Great', cursive;
+/* Handle */
+.tbl-content::-webkit-scrollbar-thumb {
+  background: white;
 }
 
-#quant{
-padding-left: 50px;
-}
-
-#iname{
-padding-left: 50px;
-font-family: 'Fredericka the Great', cursive;
-}
-
-#iprice{
-padding-left: 70px;
-padding-right: 30px;
-font-family: 'Fredericka the Great', cursive;
-}
+/* Handle on hover */
+.tbl-content::-webkit-scrollbar-thumb:hover {
+  background: gray;
+  }
 
 .order{
 background-color: black;
@@ -129,122 +83,72 @@ justify-content: center;
 padding: 25px 0px 25px 0px;
 }
 
-.order #order{
-max-width: auto;
+  #order{
+  max-width: auto;
+  color: white;
+  font-size: 30px;
+  font-family: 'Noto Serif', serif;
+  border: white solid 2px;
+  background-color: black;
+  }
+
+  #order:hover {
+  background-color: #2e8545;
+  border: white solid 2px;
+  font-size: 30px;
+  color: white;
+  }
+
+
+  .modal-content{
+  background: black;
+  border: solid white 5px;
+  }
+
+.modal-header{
 color: white;
 font-size: 30px;
-font-family: 'Fredericka the Great', cursive;
-border: white solid 2px;
-background-color: black;
-}
-
-.order #order:hover {
-background-color: #2e8545;
-border: white solid 2px;
-font-size: 30px;
-font-family: 'Fredericka the Great', cursive;
-color: white;
-}
-
-.order #order:onclick {
-background-color: #2e8545;
-border: white solid 2px;
-font-size: 30px;
-font-family: 'Fredericka the Great', cursive;
-color: white;
-}
-
-#quant_n{
-width: 60px;
-height: 30px;
-justify-content: center;
-font-family: 'Fredericka the Great', cursive;
-font-size: 30px;
-color: black;
-}
-
-.modal-content{
-background-color: black;
-border: solid 2px white;
-}
-
-#exampleModalLabel{
-font-family: 'Fredericka the Great', cursive;
-font-size: 30px;
-color:white;
-}
-
-.modal-header button{
-background-color: red;
-width:30px;
-height:30px;
-border-radius:20%;
-color: white;
+font-family: 'Noto Serif', serif;
 }
 
 .modal-body{
-justify-content: center;
-border:  solid 2px white;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
 }
 
-#ordered_list{
-width: 460px;
-height: 200px;
-padding: 10px 10px 10px 10px;
-font-family: 'Fredericka the Great', cursive;
-font-size: 20px;
-border: solid 2px white;
-background-color: black;
+#edit{
+padding: 5px 5px 5px 5px;
 color: white;
+font-size: 25px;
+font-family: 'Noto Serif', serif;
 }
 
-.total{
-background-color: black;
-display: flex;
-justify-content: flex-end;
-padding: 20px 0px 20px 0px;
+#check_order{
+width: 100%;
+max-height: 330px;
 }
 
-.Total{
-width: auto;
-color: white;
-font-size: 20px;
-font-family: 'Fredericka the Great', cursive;
-background-color: black;
+.m-tbl-content{
+height: 235px;
+overflow-y: scroll;
 }
 
-#total{
-width: auto;
-height: 20px;
-color: white;
-text-align: center;
-font-size: 20px;
-font-family: 'Fredericka the Great', cursive;
-border:0px;
-background-color: black;
+.m-tbl-content::-webkit-scrollbar {
+  width: 8px;
 }
 
-.fin_order{
-background-color: black;
-display: flex;
-justify-content: center;
-padding: 5px 0px 5px 0px;
+/* Track */
+.m-tbl-content::-webkit-scrollbar-track {
+  background: black;
+  border: solid white 2px;
 }
 
-#conf_order{
-max-width: auto;
-color: white;
-font-size: 20px;
-font-family: 'Fredericka the Great', cursive;
-border: white solid 2px;
-background-color: black;
+/* Handle */
+.m-tbl-content::-webkit-scrollbar-thumb {
+  background: white;
 }
 
-#conf_order:hover{
-background-color: #2e8545;
-}
-
-#conf_order:onclick{
-background-color: #2e8545
-}
-
+/* Handle on hover */
+.m-tbl-content::-webkit-scrollbar-thumb:hover {
+  background: gray;
+  }
