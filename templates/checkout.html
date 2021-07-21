@@ -13,6 +13,7 @@
 {% endblock %}j
 
 {% block content %}
+<<<<<<< HEAD
 <div class="d-flex flex-wrap">
     <div class="checkout-form">
         <div class="d-flex" style="width: 100%; margin-bottom: 20px; margin-top: 20px;">
@@ -74,6 +75,11 @@
             </div>
         </div>
 
+=======
+<div class="d-flex flex-wrap-reverse">
+    <div style="padding: 0px 0px 0px 0px; margin: 10px 10px 10px 10px;">
+        <h3 style="color: white; font-family: 'Noto Serif', serif">Shipping address</h3>
+>>>>>>> f4c4c040d1f83f574c977df4323cb6827e716064
         <form method="post">
 <!--        <form method="post">-->
 
@@ -90,5 +96,31 @@
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
     </div>
+<<<<<<< HEAD
+=======
+    <div style="padding: 0px 0px 0px 0px; margin: 10px 10px 10px 10px; border: white solid 2px; border-radius: 5%;">
+        <h3 style="text-align: center; color: white; font-family: 'Noto Serif', serif; border-bottom: white solid 2px; margin: 0px 0px 0px 0px;">Your Order</h3>
+        <table style="margin: 0px 0px 0px 0px; padding: 5px 5px 5px 5px; border: 0px; font-family: 'Noto Serif', serif; width: 100%; color: white; border-bottom: solid white 2px;">
+            <thead style="border-bottom: solid white 1px;">
+                <tr>
+                    <td style="padding-left: 5px;">Items</td>
+                    <td align="center">Quantity</td>
+                    <td align="right" style="padding-right: 5px;">₹/unit</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for oitem in order.items.all %}
+            <tr>
+                <td align="left" style="padding-left: 5px;">{{oitem.item.name}}</td>
+                <td align="center">{{oitem.quantity}}</td>
+                <td align="right" style="padding-right: 5px;">{{oitem.item.price}} ₹</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="d-flex">
+            <h6 class="ms-auto" style="padding: 5px 5px 5px 5px; color: white; font-family: 'Noto Serif', serif; vertical-align: center;">Total: {{order.get_total_price}} /- ₹</h6>
+        </div>
+    </div>
+>>>>>>> f4c4c040d1f83f574c977df4323cb6827e716064
 </div>
 {% endblock %}
