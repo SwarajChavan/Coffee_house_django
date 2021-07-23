@@ -125,10 +125,12 @@ border-radius: .5rem;
 width: 100%;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and(min-width: 300px;) and (max-width: 876px){
+
 .navbar-brand{
-font-size: 60px;
+font-size: 55px;
 }
+
 .nav-item {
 font-size: 50px;
 }
