@@ -50,7 +50,7 @@
                         <li class="nav-item" id="cart">
                                 <a href="{% url 'order-summary' %}" class="notification" data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
                                     <span class="badge">
-                                        <h6><b>{{len_oi}}</b></h6>
+                                        {{len_oi}}
                                     </span>
                                     <img id="ordered_food" src="{{baseImg}}/ordered_food.png" width="35px" height="35px">
                                 </a>

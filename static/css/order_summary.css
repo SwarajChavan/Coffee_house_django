@@ -13,14 +13,17 @@ width: 100%;
 table-layout: fixed;
 }
 
-.tbl-header tr{
+.tbl-header{
 background: black;
+border-radius: .5rem;
 border: solid white 1px;
 }
 
 .tbl-content{
 background: black;
-max-height: 384px;
+border: white solid 2px;
+border-radius: .5rem;
+max-height: 407px;
 overflow-y: scroll;
 }
 
@@ -33,7 +36,7 @@ font-family: 'Noto Serif', serif;
 font-size: 27px;
 padding: 10px 10px 10px 10px;
 color: white;
-border-bottom:solid white 2px;
+border-bottom: none;
 //text-align: center;
 }
 
@@ -52,17 +55,20 @@ border-bottom:solid white 2px;
 
 /* Track */
 .tbl-content::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: black;
+  border: white solid 2px;
+  border-radius: .5rem;
 }
 
 /* Handle */
 .tbl-content::-webkit-scrollbar-thumb {
-  background: #888;
+  background: white;
+  border-radius: .5rem;
 }
 
 /* Handle on hover */
 .tbl-content::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: gray;
 }
 #reduce_quantity{
 background: #A60505;
@@ -92,4 +98,37 @@ font-size: 25px;
 #total{
 border: none;
 font-size: 25px;
+}
+
+@media screen and (max-width: 1024px){
+table thead tr th{
+font-size: 45px;
+border: none;
+}
+table tbody tr td{
+font-size: 40px;
+}
+.tbl-header{
+border: white solid 5px;
+border-radius: .5rem;
+}
+.tbl-content{
+max-height: 1000px;
+border: white solid 5px;
+border-radius: .5rem;
+
+}
+#warning{
+font-size: 30px;
+}
+#total{
+font-size: 40px;
+}
+#cont_shop{
+font-size: 35px;
+}
+#check_out{
+font-size: 35px;
+}
+
 }

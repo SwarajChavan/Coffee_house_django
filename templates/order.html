@@ -21,18 +21,18 @@
     <h1>Menu</h1>
 </div>
 <div class="d-flex flex-wrap" id="menu-boxes">
-    <div id="item-tables" style="height: auto">
+    <div id="item-tables">
         <div class="tbl-header">
 
             <table class="table">
                 <thead>
-                <tr style="font-size: 30px;">
-                    <th colspan="3" scope="col" style="text-align: center; text-decoration-line: underline;">Beverages</th>
+                <tr>
+                    <th id="itype" colspan="3" scope="col">Beverages</th>
                 </tr>
-                <tr style="font-size: 27px;">
-                    <th scope="col">Items</th>
-                    <th scope="col" style="text-align: right;">Price ( ₹ )</th>
-                    <th scope="col" style="text-align: right;"></th>
+                <tr>
+                    <th id="item-header" scope="col">Items</th>
+                    <th id="price-header" scope="col">Price ( ₹ )</th>
+                    <th id="add-cart-header" scope="col"></th>
                 </tr>
                 </thead>
             </table>
@@ -45,15 +45,12 @@
                 {% for item in items %}
                 {% if item.beverage == True and item.discontinued == False %}
                 <tr>
-                    <td>{{item.name}}</td>
-                    <td style="text-align: right;">{{item.price}} /-</td>
-                    <td style="text-align: center;">
+                    <td id="item-name">{{item.name}}</td>
+                    <td id="item-price">{{item.price}} /-</td>
+                    <td id="add-item" align="center">
                         <a class="btn btn-success" data-bs-placement="top" data-bs-toggle="tooltip" href="{{ item.get_add_to_cart_url}}" title="Add to cart" type="button" style="background: #3C8D34;">
                             Add to cart <img height="25px" src="{{baseImg}}/shopping-cart.png" width="25px">
                         </a>
-<!--                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{item.get_remove_cart_url}}" title="Remove from cart" type="button">-->
-<!--                            <img height="25px" src="{{baseImg}}/trash.png" width="25px">-->
-<!--                        </a>-->
                     </td>
                 </tr>
                 {% endif %}
@@ -63,18 +60,18 @@
 
         </div>
     </div>
-    <div id="item-tables" style="height: auto">
+    <div id="item-tables">
         <div class="tbl-header">
 
             <table class="table">
                 <thead>
-                <tr style="font-size: 30px;">
-                    <th colspan="3" scope="col" style="text-align: center;  text-decoration-line: underline;">Snacks</th>
+                <tr>
+                    <th id="itype" colspan="3" scope="col">Snacks</th>
                 </tr>
-                <tr style="font-size: 27px;">
-                    <th scope="col">Items</th>
-                    <th scope="col" style="text-align: right;">Price ( ₹ )</th>
-                    <th scope="col" style="text-align: right;"></th>
+                <tr>
+                    <th id="item-header" scope="col">Items</th>
+                    <th id="price-header" scope="col">Price ( ₹ )</th>
+                    <th id="add-cart-header" scope="col"></th>
                 </tr>
                 </thead>
             </table>
@@ -87,15 +84,12 @@
                 {% for item in items %}
                 {% if item.snack == True and item.discontinued == False %}
                 <tr>
-                    <td>{{item.name}}</td>
-                    <td style="text-align: right;">{{item.price}} /-</td>
-                    <td style="text-align: center;">
+                    <td id="item-name">{{item.name}}</td>
+                    <td id="item-price">{{item.price}} /-</td>
+                    <td id="add-item" align="center">
                         <a class="btn btn-success" data-bs-placement="top" data-bs-toggle="tooltip" href="{{ item.get_add_to_cart_url}}" title="Add to cart" type="button" style="background: #3C8D34;">
                             Add to cart <img height="25px" src="{{baseImg}}/shopping-cart.png" width="25px">
                         </a>
-<!--                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="{{item.get_remove_cart_url}}" title="Remove from cart" type="button">-->
-<!--                            <img height="25px" src="{{baseImg}}/trash.png" width="25px">-->
-<!--                        </a>-->
                     </td>
                 </tr>
                 {% endif %}
@@ -112,7 +106,7 @@
     <button class="btn btn-success" data-bs-target="#staticBackdrop" data-bs-toggle="modal" id="order" type="button">ORDER</button>
     <!-- Modal -->
     <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="staticBackdrop" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel">Your order</h4>
@@ -121,6 +115,7 @@
                     </a>
                 </div>
                 <div class="modal-body">
+                    {% if order.get_total_price != 0 and order.get_total_price != None %}
                     <span class="float-end">
                         <a href="{% url 'order-summary' %}" id="edit" type="button"> Edit:
                             <img height="25px" src="{{baseImg}}/edit.png" width="25px">
@@ -130,10 +125,10 @@
                         <div class="m-tbl-header">
                             <table class="table">
                                 <thead id="table_head">
-                                <tr style="font-size:20px;">
+                                <tr>
                                     <th align="left">Items</th>
                                     <th style="text-align: center;">Quantity</th>
-                                    <th style="text-align: right;">Price/unit ( ₹ )</th>
+                                    <th style="text-align: right;">Price/unit</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -142,7 +137,7 @@
                             <table class="table">
                                 <tbody>
                                 {% for oitem in order_item%}
-                                <tr style="font-size:20px;color:white;">
+                                <tr>
                                     <td align="left">{{oitem.item.name}}</td>
                                     <td align="center">{{oitem.quantity}}</td>
                                     <td align="right" style="padding-right:20px;">{{oitem.item.price}} /- ₹</td>
@@ -153,16 +148,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer" justify-content="center" style="margin: 0px 0px 0px 0px; padding: 10px 10px 10px 20px; border-top: solid white 2px;">
-                        <span class="me-auto" style="border: solid white 2px; padding: 0px 5px 0px 5px; background: #b08612; width: 200px; text-align: center;">
-                            <a type="button" data-bs-placement="top" data-bs-toggle="tooltip" title="Checkout" type="button" href="{% url 'checkout' %}" style="text-decoration: none">
-                                <h3 style="color: white; font-size: 20px; font-family: 'Noto Serif', serif;">Checkout</h3>
+                <div class="modal-footer">
+                        <span class="me-auto">
+                            <a id="checkout-btn" class="btn btn-primary" data-bs-placement="top" data-bs-toggle="tooltip" title="Checkout" type="button" href="{% url 'checkout' %}">
+                                Checkout
                             </a>
                         </span>
-                    <span class="ms-auto">
-                            <h3 style="color: white; font-size: 30px; font-family: 'Noto Serif', serif;">Total: {{order.get_total_price}} /- ₹</h3>
+                    <span id="total" class="ms-auto">{% if order.get_total_price != 0 and order.get_total_price != None %}
+                           Total: {{order.get_total_price}} /- ₹
+                        {% else %}
+                        Total: 0 /- ₹
+                        {% endif %}
                         </span>
                 </div>
+                {% else %}
+                <span id="no-order"> You have not ordered anything.</span>
+                {% endif %}
             </div>
         </div>
     </div>

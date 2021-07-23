@@ -4,16 +4,22 @@ display: grid;
 .page-header{
 max-width: 100%;
 width:auto;
+ background: #0f0802;
+border: white solid .5px;
+ }
 
+ .container-fluid{
  }
 
 
 .navbar{
-border-bottom: #0f0802 solid 4px;
+border: #0f0802 solid 4px;
+border-radius:  .5rem;
 background-color: #f9f1ef !important;
 min-width:100%;
 padding-bottom:0px;
 padding-top:0px;
+
 }
 
 .navbar-toggler{
@@ -41,12 +47,12 @@ padding-right: 40px;
 font-size:10px ;
 width: 30px;
 height: 30px;
-
-}
-.badge h6{
 margin: 0px 0px;
 font-size:15px ;
 text-decoration: none;
+padding: 0px 0px 0px 0px;
+vertical-align: middle;
+text-align: center;
 font-family: 'Open Sans', sans-serif;
 }
 
@@ -114,24 +120,37 @@ font-size: 20px;
 background-color: #f9f1ef !important;
 padding-bottom:0px;
 padding-top:0px;
-
+border:  solid #613421  4px;
+border-radius: .5rem;
+width: 100%;
 }
 
 @media screen and (max-width: 1024px){
 .navbar-brand{
-font-size: 40px;
+font-size: 60px;
 }
 .nav-item {
-font-size: 40px;
+font-size: 50px;
 }
 #ordered_food{
 max-width: 40px;
 height; 40px;
 }
 .dropdown-item{
-font-size: 40px;
+font-size: 50px;
 }
-.badge h6 b{
-font-size: 30px;
+.dropdown-menu{
+border:  solid #613421  4px;
+border-radius: .5rem;
+width: 100%;
+}
+.dropdown-divider{
+border-bottom:  solid #613421  5px;
+}
+.badge{
+font-size: 35px;
+width: auto;
+height: auto;
+
 }
 }

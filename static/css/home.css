@@ -2,7 +2,9 @@
 max-height: 690px;
 max-width: 100%;
 }
-
+body{
+background: black;
+}
 /*.carousel-item img{
 max-height: 60%;
 }*/
@@ -37,6 +39,7 @@ background: black;
 height: auto;
 border: white solid 5px;
 border-style: double;
+border-radius: .5rem;
 }
 
 .table{
@@ -84,6 +87,7 @@ overflow-y: scroll;
 .tbl-content::-webkit-scrollbar-track {
   background: black;
   border: solid white 2px;
+  border-radius: .5rem;
 }
 
 /* Handle */
@@ -170,5 +174,7 @@ height: 800px;
     #item-price{
     font-size: 40px;
     }
-
+    .tbl-content{
+    height: 760px;
+    }
 }

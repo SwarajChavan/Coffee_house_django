@@ -34,6 +34,7 @@ background: black;
 height: auto;
 border: white solid 5px;
 border-style: double;
+border-radius: .5rem;
 }
 
 .table{
@@ -49,26 +50,46 @@ table thead tr th, table tbody tr td{
 color: white;
 font-family: 'Noto Serif', serif;
 }
+.tbl-header{
+font-size: 27px;
+border-bottom: white solid 1px;
+}
 
+#itype{
+font-size: 30px;
+text-align: center;
+text-decoration-line: underline;
+}
+#item-header, #price-header, #add-cart-header{
+font-size:27px;
+border-bottom: solid white 1px;
+}
+#price-header, #item-price{
+text-align: right;
+}
 .tbl-content{
-height: 331px;
+height: 320px;
 font-size: 25px;
 overflow-y: scroll;
 }
 
 .tbl-content::-webkit-scrollbar {
   width: 8px;
+    border-radius: .5rem;
+
 }
 
 /* Track */
 .tbl-content::-webkit-scrollbar-track {
   background: black;
   border: solid white 2px;
+  border-radius: .5rem;
 }
 
 /* Handle */
 .tbl-content::-webkit-scrollbar-thumb {
   background: white;
+  border-radius: .5rem;
 }
 
 /* Handle on hover */
@@ -105,7 +126,7 @@ padding: 25px 0px 25px 0px;
   border: solid white 5px;
   }
 
-.modal-header{
+.modal-header h4{
 color: white;
 font-size: 30px;
 font-family: 'Noto Serif', serif;
@@ -114,6 +135,7 @@ font-family: 'Noto Serif', serif;
 .modal-body{
 margin: 0px 0px 0px 0px;
 padding: 0px 0px 0px 0px;
+height: auto;
 }
 
 #edit{
@@ -128,8 +150,13 @@ width: 100%;
 max-height: 330px;
 }
 
+.m-tbl-header{
+font-size: 25px;
+}
 .m-tbl-content{
-height: 235px;
+height: 226px;
+font-size:20px;
+color:white;
 overflow-y: scroll;
 }
 
@@ -141,14 +168,109 @@ overflow-y: scroll;
 .m-tbl-content::-webkit-scrollbar-track {
   background: black;
   border: solid white 2px;
+  border-radius: .5rem;
 }
 
 /* Handle */
 .m-tbl-content::-webkit-scrollbar-thumb {
   background: white;
+  border-radius: .5rem;
 }
 
 /* Handle on hover */
 .m-tbl-content::-webkit-scrollbar-thumb:hover {
   background: gray;
   }
+.modal-footer{
+margin: 0px 0px 0px 0px;
+padding: 10px 10px 10px 20px;
+border-top: solid white 2px;
+background: black;
+}
+
+#checkout-btn{
+text-decoration: none;
+color: white;
+font-size: 30px;
+font-family: 'Noto Serif', serif;
+background: #b08612;
+border: solid white 2px;
+width: 200px;
+}
+  #total{
+  color: white;
+  font-size: 30px;
+  font-family: 'Noto Serif', serif;
+  }
+
+  #no-order{
+  color: white;
+  font-size: 30px;
+  font-family: 'Noto Serif', serif;
+  text-align: center;
+  width: 100%;
+  }
+
+  @media screen and (max-width: 1024px) {
+      #menu-title h1{
+      font-size: 55px;
+      }
+      #item-tables{
+      width: 96%;
+      margin: auto;
+      }
+      #itype{
+      font-size: 50px;
+      }
+      #item-header, #price-header, #add-cart-header{
+      font-size: 45px;
+      }
+
+      .tbl-content{
+      height: 700px;
+      font-size: 40px;
+      }
+      #add-item a{
+      font-size: 40px;
+      }
+      .modal-dialog{
+      max-width: 96%;
+      border-radius: 1.0rem;
+      }
+      .modal-header{
+      border-bottom: white solid 5px;
+      }
+      .modal-header h4{
+      font-size: 50px;
+      }
+      .m-tbl-header{
+      font-size: 45px;
+      }
+      .modal-body{
+      max-height: auto;
+     height: 800px;
+      }
+      .m-tbl-header{
+      border-bottom: white solid 2px;
+      }
+      .m-tbl-content{
+      font-size: 40px;
+      height: 640px;
+      }
+      #edit{
+      font-size: 45px;
+      }
+      #checkout-btn{
+      font-size: 45px;
+      width: auto;
+      }
+      #total{
+      font-size: 45px;
+      }
+      #order{
+      font-size: 50px;
+      }
+      .modal-footer{
+      border-top: solid white 5px;
+      }
+}
