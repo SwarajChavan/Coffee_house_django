@@ -1,0 +1,28 @@
+body{
+background: black;
+}
+
+.update-form form input, .update-form form select{
+font-family: 'Noto Serif', serif;
+font-size: 25px;
+color: white;
+background: black;
+}
+
+.update-form{
+margin: auto;
+max-width: 95%;
+font-family: 'Noto Serif', serif;
+color: white;
+font-size: 25px;
+}
+
+.borderless td, .borderless tr {
+    //border: none;
+    color: white;
+}
+
+.borderless table tr td{
+padding-bottom: 10px;
+color: white;
+}

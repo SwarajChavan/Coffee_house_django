@@ -1,0 +1,210 @@
+body{
+background: black;
+}
+  #order{
+  max-width: auto;
+  color: white;
+  font-size: 30px;
+  font-family: 'Noto Serif', serif;
+  border: white solid 2px;
+  background-color: orange;
+  }
+
+  #order:hover {
+  background-color: #2e8545;
+  border: white solid 2px;
+  font-size: 30px;
+  color: white;
+  }
+  .modal-content{
+  background: black;
+  border: solid white 5px;
+  }
+.modal-lg{
+max-width: 90%;
+}
+.modal-header span{
+color: white;
+text-align: center;
+text-decoration: underline;
+font-size: 35px;
+width: 80%;
+font-family: 'Noto Serif', serif;
+}
+
+.modal-body{
+margin: 0px 0px 0px 0px;
+padding: 10px 10px 10px 10px;
+}
+.modal-body .d-flex{
+margin: 10px 10px 10px 10px ;
+}
+
+#edit{
+padding: 5px 5px 5px 5px;
+color: white;
+font-size: 30px;
+font-family: 'Noto Serif', serif;
+}
+
+
+#check_order{
+width: 100%;
+max-height: 400px;
+min-height: 100px;
+overflow-y: scroll;
+}
+
+#check_order::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+#check_order::-webkit-scrollbar-track {
+  background: black;
+  border: solid white 2px;
+}
+
+/* Handle */
+#check_order::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+#check_order::-webkit-scrollbar-thumb:hover {
+  background: gray;
+  }
+  #check_order .table{
+  border-collapse: collapse;
+  color: white;
+  font-family: 'Noto Serif', serif;
+  width: 100%;
+  }
+
+#item-head, #quantity-head, #price-head{
+position: sticky;
+top: 0;
+font-size: 30px;
+background: black;
+}
+#quantity-head{
+text-align: center;
+}
+#price-head{
+text-align: right;
+padding-right: 5%;
+}
+#item-name, #item-quantity, #item-price{
+font-size: 27px;
+}
+
+#item-quantity{
+text-align: center;
+}
+#item-price{
+text-align: right;
+padding-right: 5.1%;
+}
+
+
+
+
+.checkout-form{
+margin: auto;
+margin-top: 30px;
+border: solid white 2px;
+border-radius: .5rem;
+padding: 10px 10px 10px 10px;
+}
+.checkout-form .d-flex h3{
+color: white;
+text-align: center;
+text-decoration: underline;
+font-family: 'Noto Serif', serif;
+font-size: 40px;
+margin-bottom: 20px;
+width: 70%;
+}
+
+.checkout-form form{
+color: white;
+font-family: 'Noto Serif', serif;
+font-size: 25px;
+margin: auto;
+}
+.checkout-form table{
+table-layout: auto;
+max-width: auto;
+}
+.checkout-form form table tr td input, .checkout-form form table tr td textarea{
+font-size: 20px;
+background: black;
+color: white;
+}
+.checkout-form form table tr td span{
+color: yellow;
+font-size: 20px;
+}
+.checkout-form form table tr td{
+padding-bottom: 20px;
+}
+
+#id_pincode{
+width: 100px;
+}
+.checkout-form form button{
+width: 100%;
+margin-top:20px;
+font-size: 25px;
+}
+
+.table thead tr td{
+padding: 2px 2px 2px 2px;
+}
+
+.modal-footer span{
+font-size: 30px;
+font-family:  'Noto Serif', serif;
+color: white;
+}
+
+@media screen and ( max-width: 1024px){
+.checkout-form{
+width: 95%;
+margin: auto;
+margin-bottom: 30px;
+margin-top: 30px;
+}
+.checkout-form h3{
+font-size: 40px;
+margin-bottom: 50px;
+}
+
+.checkout-form form table tr td input, .checkout-form form table tr td textarea,.checkout-form form table tr td label{
+font-size: 35px;
+}
+
+#id_pincode{
+width: 170px;
+}
+.checkout-form form table tr td span{
+font-size: 30px;
+}
+
+.checkout-form form button{
+font-size: 35px;
+}
+
+.modal-lg{
+width: 90%;
+}
+.modal-header span{
+font-size: 40px;
+}
+#item-head, #quantity-head, #price-head{
+font-size: 37px;
+}
+#item-name, #item-quantity, #item-price{
+font-size: 35px;
+}
+}
