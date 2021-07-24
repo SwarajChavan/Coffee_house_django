@@ -119,17 +119,17 @@ def checkout(request):
     order= Orders.objects.filter(ordered_by=request.user, ordered=False)[0]
     len_oi = len(order_item)
     if request.method == 'POST':
-            form = CheckoutForm(request.POST)
-            if form.is_valid():
-                street_name = form.cleaned_data['street_name']
-                apartment_address = form.cleaned_data['apartment_address']
-                city = form.cleaned_data['city']
-                pincode = form.cleaned_data['pincode']
-                checkout_address = str(apartment_address+", "+street_name+ ", "+city+"-"+str(pincode))
-                update_order = Orders.objects.get(ordered_by=request.user, ordered=False)
-                update_order.checkout_address = checkout_address
-                update_order.save()
-                return redirect(reverse('payment-gateway'))
+        form = CheckoutForm(request.POST)
+        if form.is_valid():
+            street_name = form.cleaned_data['street_name']
+            apartment_address = form.cleaned_data['apartment_address']
+            city = form.cleaned_data['city']
+            pincode = form.cleaned_data['pincode']
+            checkout_address = str(apartment_address+", "+street_name+ ", "+city+"-"+str(pincode))
+            update_order = Orders.objects.get(ordered_by=request.user, ordered=False)
+            update_order.checkout_address = checkout_address
+            update_order.save()
+            return redirect(reverse('payment-gateway'))
     else:
         form = CheckoutForm()
     return render(request, 'checkout.html', {'form': form,'len_oi':len_oi, 'order':order, 'order_item': order_item})

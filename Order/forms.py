@@ -2,7 +2,7 @@ from django import forms
 from.models import *
 
 class CheckoutForm(forms.Form):
-    street_name = forms.CharField(label='Street name', max_length=20, widget=forms.TextInput(attrs={
+    street_name = forms.CharField(label='Street name', widget=forms.TextInput(attrs={
                 "class": 'form-control',
                 "placeholder": 'Street name',
                 "style": "width: 600px;"
@@ -40,15 +40,17 @@ class CheckoutForm(forms.Form):
     def clean_apartment_address(self):
         apt_add = self.cleaned_data['apartment_address'].lower()
         for i in apt_add:
-            if len(apt_add) < 20 or len(apt_add) > 150:
-                raise ValidationError("* length of address should be 20-150.")
-            if (ord(i) > 122 or ord(i) < 97) or (ord(i) not in [44, 45, 46, 47]) or (ord(i) < 48 or ord(i) > 57):
+            if (ord(i) > 122 or ord(i) < 97) and ord(i) != 32 and (ord(i) < 48 or ord(i) > 57) and (ord(i) < 44 or ord(i) > 47):
                 raise ValidationError("* Enter letters and ', . / -' only.")
+        if len(apt_add) < 20 or len(apt_add) > 150:
+            raise ValidationError("* length of address should be 20-150.")
         return apt_add
 
     def clean_street_name(self):
-        st_name= self.cleaned_data['street_name'].lower()
+        st_name = self.cleaned_data['street_name'].lower()
         for i in st_name:
-            if (ord(i) > 122 or ord(i) < 97) or (ord(i) < 48 or ord(i) > 57):
+            if (ord(i) > 122 or ord(i) < 97) and ord(i)!= 32 and (ord(i) < 48 or ord(i) > 57):
                 raise ValidationError("* Enter letters and numbers only.")
+        if len(st_name) < 10 or len(st_name) > 20:
+            raise ValidationError("* Length of Street name should be 10-20 chars.")
         return st_name.capitalize()
