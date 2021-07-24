@@ -43,6 +43,7 @@ margin: 10px 10px 10px 10px ;
 #edit{
 padding: 5px 5px 5px 5px;
 color: white;
+background: black;
 font-size: 30px;
 font-family: 'Noto Serif', serif;
 }
@@ -57,17 +58,20 @@ overflow-y: scroll;
 
 #check_order::-webkit-scrollbar {
   width: 8px;
+  border-radius: .5rem;
 }
 
 /* Track */
 #check_order::-webkit-scrollbar-track {
   background: black;
   border: solid white 2px;
+  border-radius: .5rem;
 }
 
 /* Handle */
 #check_order::-webkit-scrollbar-thumb {
   background: white;
+  border-radius: .5rem;
 }
 
 /* Handle on hover */
@@ -80,7 +84,9 @@ overflow-y: scroll;
   font-family: 'Noto Serif', serif;
   width: 100%;
   }
-
+#check_order .tbl-header{
+background: black;
+}
 #item-head, #quantity-head, #price-head{
 position: sticky;
 top: 0;
@@ -105,9 +111,6 @@ text-align: center;
 text-align: right;
 padding-right: 5.1%;
 }
-
-
-
 
 .checkout-form{
 margin: auto;

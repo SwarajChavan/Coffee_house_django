@@ -113,7 +113,7 @@ color: green;
 .dropdown-item{
 font-family: 'Patua One', cursive;
 font-size: 20px;
-//padding-right: 120px;
+
 }
 
 .dropdown-menu{
@@ -125,12 +125,10 @@ border-radius: .5rem;
 width: 100%;
 }
 
-@media screen and(min-width: 300px;) and (max-width: 876px){
-
+@media screen and (min-width: 300px; max-width: 1024px;){
 .navbar-brand{
 font-size: 55px;
 }
-
 .nav-item {
 font-size: 50px;
 }
@@ -153,6 +151,5 @@ border-bottom:  solid #613421  5px;
 font-size: 35px;
 width: auto;
 height: auto;
-
 }
 }

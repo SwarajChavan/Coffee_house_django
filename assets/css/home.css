@@ -152,7 +152,7 @@ height: 800px;
 }
 
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1024px) {
      #menu-boxes{
         flex-direction: column;
       }
